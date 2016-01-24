@@ -1,0 +1,12 @@
+body
+  nav.navbar.navbar-default
+    div.container-fluid
+      div.navbar-header
+        a.navbar-brand(href="/") Step App
+      ul.nav.navbar-nav
+        li
+          a(href="/") home
+        li
+          a(href="/list") list
+      p.navbar-text.navbar-right(data-hook="users-name") Name Here
+  main(data-hook="page-container")

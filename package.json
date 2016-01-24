@@ -1,0 +1,26 @@
+{
+  "name": "imp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ryan Baron",
+  "license": "ISC",
+  "dependencies": {
+    "ampersand-model": "^6.0.2",
+    "ampersand-router": "^3.0.2",
+    "ampersand-view": "^9.0.2",
+    "ampersand-view-switcher": "^2.0.0",
+    "domready": "^1.0.8",
+    "getconfig": "^2.2.0",
+    "hapi": "^12.1.0",
+    "hapi-dummy-api": "^1.0.1",
+    "jade-runtime": "^2.0.0",
+    "moonboots_hapi": "^5.0.0",
+    "stylizer": "^2.1.0",
+    "templatizer": "^2.0.3",
+    "underscore": "^1.8.3"
+  }
+}
