@@ -5,7 +5,7 @@ const server = new Hapi.Server();
 const moonboots = require('moonboots_hapi');
 const moonbootsConfig = require('./moonbootsConfig');
 var peopleAPI = require('./plugins/peopleAPI');
-//var pagesDataAPI = require('./plugins/pagesDataAPI');
+var pagesDataAPI = require('./plugins/pagesDataAPI');
 var programsAPI = require('./plugins/programsAPI');
 
 server.connection({ host: 'localhost', port: 3000 });
@@ -16,13 +16,15 @@ server.route([
     path: '/api/me',
     handler: function (request, reply) {
       reply({
-        id: '1',
-        givenName: 'Ryan',
-        familyName: 'Baron',
-        email: 'ryan@madtownagency.com'
+        id: 10,
+        firstName: 'Ryan',
+        lastName: 'Baron',
+        email: 'ryan@madtownagency.com',
+        coolnessFactor: 10
       });
     }
   },
+  /*
   {
     method: 'GET',
     path: '/api/pages/index',
@@ -36,6 +38,7 @@ server.route([
       });
     }
   }
+  */
 ]);
 
 /*
@@ -63,6 +66,9 @@ server.register([
   },
   {
     register: programsAPI.register
+  },
+  {
+    register: pagesDataAPI.register
   }
 ], function (err) {
   if (err) throw err;

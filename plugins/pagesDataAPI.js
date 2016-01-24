@@ -2,13 +2,13 @@ var _ = require('underscore');
 
 var pages = [
   {
-    id: 1,
+    nid: 1,
     title: 'Home',
     description: 'Home page description text',
     content: 'Home page content text',
   },
   {
-    id: 1,
+    nid: 2,
     title: 'About',
     description: 'About page description text',
     content: 'About page content text',
@@ -16,7 +16,12 @@ var pages = [
 ];
 
 
-module.exports = function (plugin, options, next) {
+var nid = 1;
+function getId(nid) {
+  return _.findWhere(pages, {nid: parseInt(nid + '', 10)});
+}
+
+module.exports.register =  function (plugin, options, next) {
   plugin.route({
     method: 'GET',
     path: '/api/pages',
@@ -26,16 +31,16 @@ module.exports = function (plugin, options, next) {
   });
   plugin.route({
     method: 'GET',
-    path: '/api/pages/{title}',
+    path: '/api/pages/{nid}',
     handler: function (request, reply) {
-      var found = get(request.params.title);
+      var found = getId(request.params.nid);
       reply(found).code(found ? 200 : 404);
     }
   });
   next();
 };
 
-module.exports.attributes = {
+module.exports.register.attributes = {
   version: '0.0.0',
-  name: 'pages_data_api'
+  name: 'page_data_api'
 };

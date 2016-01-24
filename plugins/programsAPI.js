@@ -2,22 +2,22 @@ var _ = require('underscore');
 
 var programs = [
   {
-    id: 1,
+    pid: 1,
     title: 'Learn GIT',
     level: '1',
     days: 10
   },
   {
-    id: 2,
+    pid: 2,
     title: 'Learn PHP',
     level: '1',
     days: 10
   }
 ];
 
-var id = 1;
-function getId(id) {
-  return _.findWhere(programs, {id: parseInt(id + '', 10)});
+var pid = 1;
+function getId(pid) {
+  return _.findWhere(programs, {pid: parseInt(pid + '', 10)});
 }
 
 
@@ -40,9 +40,9 @@ module.exports.register = function (plugin, options, next) {
   });
   plugin.route({
     method: 'GET',
-    path: '/api/programs/{id}',
+    path: '/api/programs/{pid}',
     handler: function (request, reply) {
-      var found = getId(request.params.id);
+      var found = getId(request.params.pid);
       reply(found).code(found ? 200 : 404);
     }
   });

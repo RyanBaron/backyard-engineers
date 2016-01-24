@@ -7,17 +7,18 @@ module.exports = Model.extend({
     this.fetch(); //make an ajax call to the url, to populate the model
   },
   props: {
-    id: 'string',
-    givenName: 'string',
-    familyName: 'string',
-    email: 'string'
+    uid: 'number',
+    firstName: 'string',
+    lastName: 'string',
+    email: 'string',
+    coolnessFactor: 'number'
   },
   derived: {
     fullName: {
-      deps: ['givenName', 'familyName'],
+      deps: ['firstName', 'lastName'],
       fn: function() {
-        if(!this.givenName) return '';
-        return this.givenName + ' ' + this.familyName;
+        if(!this.firstName) return '';
+        return this.firstName + ' ' + this.lastName;
       }
     }
   }
