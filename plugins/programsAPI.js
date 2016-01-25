@@ -4,14 +4,20 @@ var programs = [
   {
     pid: 1,
     title: 'Learn GIT',
-    level: '1',
+    level: 1,
     days: 10
   },
   {
     pid: 2,
     title: 'Learn PHP',
-    level: '1',
+    level: 1,
     days: 10
+  },
+  {
+    pid: 3,
+    title: 'Learn Javascript',
+    level: 2,
+    days: 15
   }
 ];
 

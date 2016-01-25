@@ -2,12 +2,21 @@ var MainView = require('./views/main');
 var domready = require('domready');
 var Router = require('./router');
 var MeModel = require('./models/me');
+var Persons = require('./models/persons')
+var Programs = require('./models/programs')
+
 //var IndexPageModel = require('./models/pages/index');
 
 window.app = {
   init: function() {
     var self = this;
     window.me = new MeModel();
+
+    //data collections
+    this.users = new Persons();
+    this.programs = new Programs();
+
+
     domready(function(){
       //window.indexPageModelData = new IndexPageModel();
       self.router = new Router();

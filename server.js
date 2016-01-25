@@ -75,7 +75,7 @@ server.register([
   // If everything loaded correctly, start the server:
   server.start(function (err) {
     if (err) throw err;
-    //console.log('Server running at-->', server.info.uri);
+    console.log('Server running at-->', server.info.uri);
     //console.log('Backyard Engineers is running at: http://' + config.http.listen + ':' + config.http.port);
   });
 });
