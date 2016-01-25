@@ -20,7 +20,7 @@ module.exports = View.extend({
   initialize: function() {
     //set things up before anything is rendered
     this.listenTo(app.router, 'page', this.handleNewPage);
-    this.listenTo(app.router, 'page', this.someOtherFunction);
+    //this.listenTo(app.router, 'page', this.someOtherFunction);
   },
   render: function() {
     this.renderWithTemplate();

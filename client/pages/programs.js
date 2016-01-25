@@ -10,6 +10,8 @@ module.exports = View.extend({
   autoRender: true,
   render: function() {
     this.renderWithTemplate();
+    console.log('program collection');
+    console.log(this.collection);
     this.renderCollection(this.collection, ProgramView, this.queryByHook('programs-list')); //registers this as a subview to this main view, will be destroyed when the parent view is removed
   },
 });

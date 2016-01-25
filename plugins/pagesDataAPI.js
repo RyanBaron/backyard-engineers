@@ -6,12 +6,14 @@ var pages = [
     title: 'Home',
     description: 'Home page description text',
     content: 'Home page content text',
+    factsheet_title: 'Factsheet',
   },
   {
     nid: 2,
-    title: 'About',
-    description: 'About page description text',
-    content: 'About page content text',
+    title: 'Press Backyard Engineers',
+    description: 'Press page description text',
+    content: 'Press page content text',
+    factsheet_title: 'Factsheet',
   }
 ];
 
@@ -24,14 +26,14 @@ function getId(nid) {
 module.exports.register =  function (plugin, options, next) {
   plugin.route({
     method: 'GET',
-    path: '/api/pages',
+    path: '/api/page',
     handler: function (request, reply) {
       reply(pages);
     }
   });
   plugin.route({
     method: 'GET',
-    path: '/api/pages/{nid}',
+    path: '/api/page/{nid}',
     handler: function (request, reply) {
       var found = getId(request.params.nid);
       reply(found).code(found ? 200 : 404);

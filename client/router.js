@@ -2,6 +2,7 @@ var Router = require('ampersand-router');
 var HomePage = require('./pages/home');
 var UsersPage = require('./pages/users');
 var ProgramsPage = require('./pages/programs');
+var PressPage = require('./pages/press');
 
 //https://github.com/AmpersandJS/ampersand-router
 
@@ -9,11 +10,11 @@ module.exports = Router.extend({
   routes: {
     '':     'home',
     'users': 'users',
-    'programs': 'programs'
+    'programs': 'programs',
+    'press': 'press'
   },
 
   home: function() {
-    console.log('on the home page');
     //trigger page (listen for page in main.js)
     //pass in an instance of a "page" (view)
     this.trigger('page', new HomePage({
@@ -22,8 +23,7 @@ module.exports = Router.extend({
     }));
   },
   users: function() {
-    console.log('on the users page');
-    console.log(app.users);
+
     this.trigger('page', new UsersPage({
       collection: app.users,
       id: 'users-page',
@@ -31,10 +31,16 @@ module.exports = Router.extend({
     }));
   },
   programs: function() {
-    console.log('on the programs page');
     this.trigger('page', new ProgramsPage({
       collection: app.programs,
       id: 'programs-page',
+      pageData: 'some programs page passed in data'
+    }));
+  },
+  press: function() {
+    this.trigger('page', new PressPage({
+      id: 2,
+      collection: app.pageData,
       pageData: 'some programs page passed in data'
     }));
   }
