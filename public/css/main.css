@@ -1,3 +1,9 @@
 body {
   background-color: #fff;
 }
+.game-facts .fact-wrapper .fact-title {
+  font-weight: 600;
+}
+.game-facts .fact-wrapper .fact-text {
+  font-weight: normal;
+}

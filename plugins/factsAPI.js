@@ -14,6 +14,13 @@ var facts = [
     title: 'Platforms: ',
     text: 'PC, Mac, iOS, Android',
     link: ''
+  },
+  {
+    id: 3, //do not change the id
+    fid: 3,
+    title: 'Contact: ',
+    text: 'contact@filamentgames.com',
+    link: ''
   }
 ];
 

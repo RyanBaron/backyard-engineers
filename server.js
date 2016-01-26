@@ -8,6 +8,7 @@ var peopleAPI = require('./plugins/peopleAPI');
 var pagesDataAPI = require('./plugins/pagesDataAPI');
 var programsAPI = require('./plugins/programsAPI');
 var factsAPI = require('./plugins/factsAPI');
+var gameAPI = require('./plugins/gameAPI');
 
 server.connection({ host: 'localhost', port: 3000 });
 
@@ -73,6 +74,9 @@ server.register([
   },
   {
    register: factsAPI.register
+  },
+  {
+   register: gameAPI.register
   }
 ], function (err) {
   if (err) throw err;

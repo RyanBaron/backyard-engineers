@@ -20,7 +20,7 @@ templatizer["pages"]["home"] = function tmpl_pages_home() {
 
 // pages\press.jade compiled template
 templatizer["pages"]["press"] = function tmpl_pages_press() {
-    return '<section class="page press-page"><article class="page-inside press-page-inside"><header class="page-header"><div class="container"><h1>Press Page</h1></div></header><div class="press-about"><div class="container"><div class="row"><div class="col-md-3 col-lg-2"><h2 class="sub-header">Factsheet</h2><div data-hook="game-facts"></div></div><div class="col-md-9 col-lg-10"><h2>Game Information Hardcoded</h2><div data-hook="game-info"></div></div></div></div></div><div data-hook="game-videos"></div><div data-hook="game-screenshots"></div><div data-hook="game-images"></div><div data-hook="game-awards"></div><div data-hook="game-mentions"></div><div data-hook="game-credits"></div></article></section>';
+    return '<section class="page press-page"><article class="page-inside press-page-inside"><header class="page-header"><div class="container"><h1>Press Page</h1></div></header><div class="press-about"><div class="container"><div class="row"><div class="col-md-4 col-lg-3"><h2 class="sub-header">Learning Objectives Hardcoded</h2><ul data-hook="learning-objectives"></ul><!--div(data-hook="game-facts")--></div><div class="col-md-8 col-lg-19"><h2>Game Information Hardcoded</h2><div data-hook="game-info"></div></div></div></div></div><div data-hook="game-videos"></div><div data-hook="game-screenshots"></div><div data-hook="game-images"></div><div data-hook="game-awards"></div><div data-hook="game-mentions"></div><div data-hook="game-credits"></div></article></section>';
 };
 
 // pages\programs.jade compiled template
@@ -35,12 +35,12 @@ templatizer["pages"]["users"] = function tmpl_pages_users() {
 
 // includes\game\fact.jade compiled template
 templatizer["includes"]["game"]["fact"] = function tmpl_includes_game_fact() {
-    return '<div class="game-facts"><div class="fact-wrapper"><div data-hook="fact-title" class="fact-title"></div><div data-hook="fact-text" class="fact-data"></div></div></div>';
+    return '<div class="game-facts"><div class="fact-wrapper"><span data-hook="fact-title" class="fact-title"></span><span data-hook="fact-text" class="fact-text"></span></div></div>';
 };
 
-// includes\game\game-about.jade compiled template
-templatizer["includes"]["game"]["game-about"] = function tmpl_includes_game_game_about() {
-    return '<div class="press-about"><div class="container"><div class="row"><div class="col-md-3 col-lg-2"><div data-hook="game-facts"><Game>Factsheet</Game></div></div><div class="col-md-9 col-lg-10"><div data-hook="game-info"><Game>Information</Game></div></div></div></div></div>';
+// includes\game\learning_objective.jade compiled template
+templatizer["includes"]["game"]["learning_objective"] = function tmpl_includes_game_learning_objective() {
+    return '<li data-hook="objective-text" class="check-item"></li>';
 };
 
 // includes\program\program.jade compiled template
@@ -51,6 +51,11 @@ templatizer["includes"]["program"]["program"] = function tmpl_includes_program_p
 // includes\user\user.jade compiled template
 templatizer["includes"]["user"]["user"] = function tmpl_includes_user_user() {
     return '<li><span data-hook="user-name"></span><button class="btn btn-secondary">Delete</button><button class="btn btn-primary">Edit</button></li>';
+};
+
+// includes\game\game-about.jade compiled template
+templatizer["includes"]["game"]["game-about"] = function tmpl_includes_game_game_about() {
+    return '<div class="press-about"><div class="container"><div class="row"><div class="col-md-3 col-lg-2"><div data-hook="game-facts"><Game>Factsheet</Game></div></div><div class="col-md-9 col-lg-10"><div data-hook="game-info"><Game>Information</Game></div></div></div></div></div>';
 };
 
 
