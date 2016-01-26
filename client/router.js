@@ -40,6 +40,8 @@ module.exports = Router.extend({
   press: function() {
     this.trigger('page', new PressPage({
       id: 2,
+      page_url: 'press',
+      //url: 'press',
       collection: app.pageData,
       pageData: 'some programs page passed in data'
     }));

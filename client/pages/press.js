@@ -1,5 +1,6 @@
 var View = require('ampersand-view');
 var templates = require('../templates');
+var PageData  = require('../models/pages');
 //var GameAboutView = require('../views/page-sections/game-about')
 
 module.exports = View.extend({
@@ -12,14 +13,34 @@ module.exports = View.extend({
   },
   initialize: function(options) {
     //options are passed in via the router
-    console.log('logging the options');
-    console.log(options);
+    this.pageData = new PageData();
+    //this.pageData.fetchById(2);
+    //console.log('the id fetched page data');
+    //console.log(this.pageData);
+    
+    //console.log('logging the options');
+    //console.log(options);    
+    //console.log('page data after the options');
+    //console.log(this.pageData);
     var self = this;
-    this.collection.getOrFetch(options.id, function(err, model){
-      if(err) throw err;
-      console.log('the fetched model');
-      console.log(model);
-      self.model = model;
+    //var pageModel = new this.pageData(
+    //  {
+    //    url: options.url
+    //  }, {
+    //    collection: this
+    //  }
+    //);
+    
+    //console.log('the page model');
+    //console.log(pageModel);
+      
+    this.pageData.getOrFetch(options.id, {all: true}, function(err, model){
+      if (err) {
+        console.log('- There was an error fetching page data');
+        //console.log(err);
+      } else {
+        self.model = model;
+      }
     });
     //this.collection.fetch();
 

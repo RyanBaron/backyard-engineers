@@ -2,8 +2,8 @@ var jade = require('@lukekarrys/jade-runtime');
 
 var templatizer = {};
 
-templatizer["includes"] = {};
 templatizer["pages"] = {};
+templatizer["includes"] = {};
 templatizer["includes"]["game"] = {};
 templatizer["includes"]["program"] = {};
 templatizer["includes"]["user"] = {};

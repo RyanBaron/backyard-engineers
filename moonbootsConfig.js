@@ -29,9 +29,7 @@ module.exports = {
     ],
     beforeBuildJS: function () {
       //build our templates when in development environment
-      console.log('before build js');
       if(config.isDev) {
-        console.log('isDev - before build js');
         templatizer(templateDir, appDir + 'templates.js'); //pass in an entire folder of jade files, it will create a common js module in that folder structure, second argument is the output file
       }
     },
