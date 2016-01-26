@@ -9,8 +9,10 @@ var pages = [
     description: 'Home page description text',
     content: 'Home page content text',
     sections: [{
-      type: 'header',
-      title: 'Some header title'
+      factsheet: {
+        type: 'header',
+        title: 'Some header title'
+      },
     }],
     test_title: 'Factsheet Home',
   },

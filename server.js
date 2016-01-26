@@ -7,6 +7,7 @@ const moonbootsConfig = require('./moonbootsConfig');
 var peopleAPI = require('./plugins/peopleAPI');
 var pagesDataAPI = require('./plugins/pagesDataAPI');
 var programsAPI = require('./plugins/programsAPI');
+var factsAPI = require('./plugins/factsAPI');
 
 server.connection({ host: 'localhost', port: 3000 });
 
@@ -69,6 +70,9 @@ server.register([
   },
   {
     register: pagesDataAPI.register
+  },
+  {
+   register: factsAPI.register
   }
 ], function (err) {
   if (err) throw err;
